@@ -1,6 +1,8 @@
 ﻿using API.Data;
+using API.DTOs;
 using API.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,14 +22,17 @@ namespace API.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<AppUser>> Register(string username, string password)
+        public async Task<ActionResult<AppUser>> Register(RegisterDto registerDto)
         {
+
+            if (await UserExists(registerDto.Username)) return BadRequest("Username is taken");
+
             using var hmac = new HMACSHA512();
 
             var user = new AppUser
             {
-                UserName = username,
-                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password)),
+                UserName = registerDto.Username.ToLower(),
+                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
                 PasswordSalt = hmac.Key
             };
 
@@ -35,6 +40,11 @@ namespace API.Controllers
             await _context.SaveChangesAsync();
 
             return user;
+        }
+
+        private async Task<bool> UserExists(string username)
+        {
+            return await _context.Users.AnyAsync(user => user.UserName == username.ToLower());
         }
     }
 }
