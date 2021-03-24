@@ -13,7 +13,9 @@ export class NavbarComponent implements OnInit {
 
   constructor(private accountService: AccountService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getCurrentUser();
+  }
 
   login() {
     this.accountService.login(this.model).subscribe(
@@ -28,6 +30,19 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
+    this.accountService.logout();
+
     this.loggedIn = false;
+  }
+
+  getCurrentUser() {
+    this.accountService.currentUser$.subscribe(
+      (user) => {
+        this.loggedIn = !!user; // !! to convert user to boolean if null
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }
