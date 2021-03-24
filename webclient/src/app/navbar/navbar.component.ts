@@ -25,4 +25,8 @@ export class NavbarComponent implements OnInit {
       }
     );
   }
+
+  logout() {
+    this.loggedIn = false;
+  }
 }
