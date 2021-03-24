@@ -1,4 +1,6 @@
-<h1>{{ title }}</h1>
-<ul *ngFor="let user of users">
-  <li>{{ user.id }} - {{ user.userName }}</li>
-</ul>
+<app-navbar></app-navbar>
+<div class="container">
+  <ul *ngFor="let user of users">
+    <li>{{ user.id }} - {{ user.userName }}</li>
+  </ul>
+</div>
