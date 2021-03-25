@@ -14,9 +14,12 @@
             <a class="nav-link" routerLinkActive="active" routerLink="/lists">Lists</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" routerLinkActive="active" routerLink="/messages" tabindex="-1" aria-disabled="true">Messages</a>
+            <a class="nav-link" routerLinkActive="active" routerLink="/messages" tabindex="-1" aria-disabled="true">Messages</a>
           </li>
         </ng-container>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/errors" tabindex="-1" aria-disabled="true">Errors</a>
+        </li>
       </ul>
       <div dropdown *ngIf="accountService.currentUser$ | async as user" class="dropdown ml-auto">
         <a dropdownToggle class="dropdown-toggle text-light">Welcome {{ user.username | titlecase }}</a>
