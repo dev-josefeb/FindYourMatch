@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+.container {
+  margin-top: 70px;
+}
+
+.btn-outline {
+  color: white;
+  border: 1px solid;
+  border-color: white;
+}
+
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active,
+.btn-outline.active {
+  color: white;
+  border-color: #fdcc52;
+  background-color: #fdcc52;
+}
+
+.btn {
+  border-radius: 300px;
+  font-family: "Lato", "Helvetica", "Arial", "sans-serif";
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.btn-xl {
+  font-size: 11px;
+  padding: 15px 45px;
+}
+
+.success:hover {
+  border-color: #0a6425af;
+  background-color: #0a6425af;
+}
+
+.input,
+.input:focus {
+  margin-right: 10px;
+  color: white;
+  border: none;
+  background-color: #b1b1b146;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.644);
+}
+
+.bg-transparent {
+  background-color: transparent;
+}

@@ -30,9 +30,9 @@
         </div>
       </div>
       <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" class="d-flex ml-auto" (ngSubmit)="login()" autocomplete="off">
-        <input name="username" [(ngModel)]="model.username" class="form-control me-2" type="text" placeholder="Username" />
-        <input name="password" [(ngModel)]="model.password" class="form-control me-2" type="password" placeholder="Password" />
-        <button class="btn btn-outline-success" type="submit">Login</button>
+        <input name="username" [(ngModel)]="model.username" class="input form-control me-2" type="text" placeholder="Username" />
+        <input name="password" [(ngModel)]="model.password" class="input form-control me-2" type="password" placeholder="Password" />
+        <button class="btn btn-xl success" type="submit">Login</button>
       </form>
     </div>
   </div>
