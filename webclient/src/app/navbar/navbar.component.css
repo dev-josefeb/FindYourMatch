@@ -5,10 +5,17 @@
 
 .container-fluid,
 .navbar {
+  background-color: rgba(0, 0, 0, 0.514);
   background: url("/assets/images/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
 }
 
 button {
   color: white;
   background-color: #00a1646b;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    box-shadow: inset 0 0 20px 2000px rgba(0, 0, 0, 0.151);
+  }
 }
