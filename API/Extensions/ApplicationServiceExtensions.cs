@@ -13,6 +13,7 @@ namespace API.Extensions
         {
             // We use AddScoped over AddTransient as better suited for Http requests
             services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddDbContext<DataContext>(options =>
             {
                 options.UseSqlite(config.GetConnectionString("DefaultConnection"));
