@@ -1,7 +1,6 @@
 ﻿using API.Entities;
 using API.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -23,14 +22,16 @@ namespace API.Data
 
         public async Task<AppUser> GetUserByUsernameAsync(string username)
         {
-            return await _context.Users.SingleOrDefaultAsync(user => user.UserName == username);
-
+            return await _context.Users
+                .Include(user => user.Photos)
+                .SingleOrDefaultAsync(user => user.UserName == username);
         }
 
         public async Task<IEnumerable<AppUser>> GetUsersAsync()
         {
-            return await _context.Users.ToListAsync();
-
+            return await _context.Users
+                .Include(user => user.Photos)
+                .ToListAsync();
         }
 
         public async Task<bool> SaveAllAsync()
