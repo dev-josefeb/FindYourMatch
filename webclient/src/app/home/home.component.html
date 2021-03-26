@@ -1,18 +1,24 @@
-<div class="container mt-5">
-  <div *ngIf="!registerMode" class="text-center">
-    <h1>Find your match</h1>
-    <p class="lead">Come on in to view your matches! Sign up Now!</p>
-    <div class="text-center">
-      <button (click)="registerToggle()" class="btn btn-primary btn-lg mr-2">Register</button>
-      <button class="btn btn-info btn-lg">Find out more</button>
-    </div>
-  </div>
-
-  <div *ngIf="registerMode" class="container">
-    <div class="row justify-content-center">
-      <div class="col-4">
-        <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+<header class="masthead">
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col-lg-7 my-auto">
+        <div *ngIf="!registerMode" class="header-content mx-auto">
+          <h1 class="mb-5">Find Your Match will help you find your perfect match. Come on in to view your matches. Sign up now!</h1>
+          <a (click)="registerToggle()" class="btn btn-outline btn-xl">Register Now for free</a>
+        </div>
+        <div *ngIf="registerMode" class="header-content mx-auto">
+          <div class="row justify-content-center">
+            <div class="col">
+              <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 my-auto">
+        <div class="device">
+          <img src="assets/images/header-img.png" class="img-fluid" alt="" />
+        </div>
       </div>
     </div>
   </div>
-</div>
+</header>

@@ -2,3 +2,13 @@
 .dropdown-item {
   cursor: pointer;
 }
+
+.container-fluid,
+.navbar {
+  background: url("/assets/images/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
+}
+
+button {
+  color: white;
+  background-color: #00a1646b;
+}
