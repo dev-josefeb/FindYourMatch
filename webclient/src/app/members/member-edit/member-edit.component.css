@@ -13,3 +13,25 @@
   background-color: #fff;
   border-top: none;
 }
+
+.container-fluid {
+  color: black;
+}
+
+textarea,
+textarea:focus {
+  color: rgba(255, 255, 255, 0.644);
+  border: none;
+  background-color: #b1b1b146;
+}
+
+textarea:focus {
+  color: white;
+  background-color: #b1b1b146;
+}
+
+.alert {
+  background-color: #ffc227af;
+  color: white;
+  border: none;
+}
