@@ -1,11 +1,11 @@
 <div class="container-fluid">
-  <div class="container">
-    <div class="row" *ngIf="member">
-      <div class="col-4">Your Profile</div>
+  <div class="container-profile">
+    <div class="row row-cols-auto" *ngIf="member">
+      <div class="col-4"></div>
       <div class="col-8">
         <div *ngIf="editForm.dirty" class="alert alert-info"><strong> Information: </strong> You have made changes to your profile. Any unsaved changes will be lost</div>
       </div>
-      <div class="col-4">
+      <div class="col-xs-12 col-sm-6 col-lg-3">
         <div class="card">
           <img src="{{ member.photoUrl || './assets/images/user.png' }}" alt="{{ member.knownAs }}" class="card-img top img-thumbnail" />
           <div class="card-body">
@@ -27,11 +27,11 @@
             </div>
           </div>
           <div class="card-footer">
-            <button [disabled]="!editForm.dirty" form="editForm" class="btn btn-success btn-block">Save Changes</button>
+            <button [disabled]="!editForm.dirty" form="editForm" class="btn btn-outline mr-2 btn-xl shadow-none btn-block">Save Changes</button>
           </div>
         </div>
       </div>
-      <div class="col-8">
+      <div class="col">
         <tabset class="member-tabset">
           <tab heading="About {{ member.knownAs }}">
             <form #editForm="ngForm" id="editForm" (ngSubmit)="updateMember()">

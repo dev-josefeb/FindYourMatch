@@ -24,7 +24,7 @@
   border-color: white;
 }
 
-.btn-outline:hover,
+.btn-outline:hover:enabled,
 .btn-outline:focus,
 .btn-outline:active,
 .btn-outline.active {
@@ -77,17 +77,17 @@
   border-radius: 4px;
 }
 
+/* 
 .nav-tabs > li.open,
 .member-tabset > .nav-tabs > li:hover {
-  /* border-bottom: 4px solid #fbcdcf; */
+   border-bottom: 4px solid #fbcdcf; 
 }
-
 .member-tabset > .nav-tabs > li.open > a,
 .member-tabset > .nav-tabs > li:hover > a {
   border: 0;
   background: none !important;
   color: #333333;
-}
+} */
 
 .member-tabset > .nav-tabs > li.open > a > i,
 .member-tabset > .nav-tabs > li:hover > a > i {
