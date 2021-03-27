@@ -3,6 +3,11 @@
   margin-top: 70px;
 }
 
+.btn-one {
+  background-color: #00a1646b;
+  border: none;
+}
+
 .btn-outline {
   color: white;
   border: 1px solid;
