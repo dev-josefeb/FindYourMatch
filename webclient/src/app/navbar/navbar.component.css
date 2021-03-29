@@ -1,6 +1,18 @@
+.dropdown-menu {
+  background-color: #004d2fa6;
+  border-radius: 10px;
+  color: white;
+}
+
 .dropdown-toggle,
 .dropdown-item {
   cursor: pointer;
+  color: white;
+  background-color: transparent;
+}
+
+.dropdown-item:hover {
+  color: #d1d1d1;
 }
 
 .container-fluid,

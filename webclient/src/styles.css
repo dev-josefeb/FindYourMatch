@@ -31,6 +31,11 @@
   border: none;
 }
 
+.btn-two {
+  background-color: #fca709b4;
+  border: none;
+}
+
 .btn-outline {
   color: white;
   border: 1px solid;
