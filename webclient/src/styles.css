@@ -11,6 +11,7 @@
   padding-bottom: 100px;
   color: white;
   background: url("/assets/images/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
+  overflow: auto;
 }
 
 .container-main {
