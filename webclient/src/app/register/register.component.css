@@ -5,3 +5,7 @@ button {
 .control-label {
   margin-right: 10px;
 }
+
+.input {
+  margin-right: 0px;
+}

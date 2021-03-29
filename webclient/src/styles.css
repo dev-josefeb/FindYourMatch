@@ -114,6 +114,15 @@
   border-bottom-right-radius: 20px;
 }
 
+.bs-datepicker-body table td {
+  color: rgb(140, 165, 185);
+}
+
+.bs-datepicker-body table td span.is-other-month,
+.bs-datepicker-body table td.is-other-month span {
+  color: rgba(133, 133, 133, 0.808);
+}
+
 /* Styling Membe Tabset */
 .tab-panel {
   border: 1px solid #ddd;
