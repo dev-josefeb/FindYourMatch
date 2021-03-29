@@ -1,3 +1,7 @@
 button {
   background-color: transparent;
 }
+
+.control-label {
+  margin-right: 10px;
+}
