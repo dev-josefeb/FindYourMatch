@@ -2,13 +2,19 @@
   <h2 class="text-center">Sign Up</h2>
   <hr />
   <div class="form-group">
-    <input type="text" class="form-control input" formControlName="username" placeholder="Username" />
+    <input [class.is-invalid]="registerForm.get('username').errors && registerForm.get('username').touched" type="text" class="form-control input" formControlName="username" placeholder="Username" />
+    <div class="input invalid-feedback">Please enter a username</div>
   </div>
   <div class="form-group">
-    <input type="password" class="form-control input" formControlName="password" placeholder="Password" />
+    <input [class.is-invalid]="registerForm.get('password').errors && registerForm.get('password').touched" type="password" class="form-control input" formControlName="password" placeholder="Password" />
+    <div *ngIf="registerForm.get('password').hasError('required')" class="input invalid-feedback">Please enter a password</div>
+    <div *ngIf="registerForm.get('password').hasError('minlength')" class="input invalid-feedback">Password must be atleast 4 characters</div>
+    <div *ngIf="registerForm.get('password').hasError('maxlength')" class="input invalid-feedback">Password must be at most 8 characters</div>
   </div>
   <div class="form-group">
-    <input type="password" class="form-control input" formControlName="confirmPassword" placeholder="Confirm Password" />
+    <input [class.is-invalid]="registerForm.get('confirmPassword').errors && registerForm.get('confirmPassword').touched" type="password" class="form-control input" formControlName="confirmPassword" placeholder="Confirm Password" />
+    <div *ngIf="registerForm.get('confirmPassword').hasError('required')" class="input invalid-feedback">Please enter your password again</div>
+    <div *ngIf="registerForm.get('confirmPassword').hasError('isMatching')" class="input invalid-feedback">Passwords do not match</div>
   </div>
   <div class="form-group text-center">
     <button class="btn btn-outline mr-2 btn-xl shadow-none" type="submit">Register</button>
