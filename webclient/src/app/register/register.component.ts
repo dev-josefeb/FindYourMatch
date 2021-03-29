@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { AccountService } from '../_services/account.service';
 
@@ -13,11 +13,16 @@ export class RegisterComponent implements OnInit {
 
   model: any = {};
   registerForm: FormGroup;
+  maxDate: Date;
 
   constructor(private accountService: AccountService, private toastr: ToastrService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.initializeForm();
+
+    // Only let users above 18 years of age to register to the site
+    this.maxDate = new Date();
+    this.maxDate.setFullYear(this.maxDate.getFullYear() - 18);
   }
 
   initializeForm() {
