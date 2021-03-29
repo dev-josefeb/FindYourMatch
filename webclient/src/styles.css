@@ -82,6 +82,38 @@
   background-color: transparent;
 }
 
+.invalid-feedback {
+  color: #fdcc52;
+}
+
+/* Datepicker Styling */
+
+.bs-datepicker-container {
+  padding: 0px;
+  border-radius: 20px;
+}
+
+.bs-datepicker {
+  padding: 0px;
+  border-radius: 20px;
+  background-color: #333333d8;
+}
+
+.bs-calendar-layout {
+  border-radius: 20px !important;
+}
+
+.bs-datepicker-head {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.bs-datepicker-body {
+  border: none;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
 /* Styling Membe Tabset */
 .tab-panel {
   border: 1px solid #ddd;
