@@ -1,3 +1,7 @@
 button {
   background-color: transparent;
 }
+
+.invalid-feedback {
+  color: #fdcc52;
+}
