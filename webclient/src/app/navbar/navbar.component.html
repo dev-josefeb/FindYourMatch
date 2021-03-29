@@ -21,7 +21,7 @@
       </li>
     </ul>
     <div dropdown *ngIf="accountService.currentUser$ | async as user" class="dropdown ml-auto">
-      <img class="rounded-circle" src="{{ user.photoUrl }}" alt="{{ user.username }}" />
+      <img class="rounded-circle" src="{{ user.photoUrl || '/assets/images/user.png' }}" alt="{{ user.username }}" />
       <a dropdownToggle class="dropdown-toggle text-light ml-2">Welcome {{ user.username | titlecase }}</a>
       <div *dropdownMenu class="dropdown-menu mt-3">
         <a routerLink="/member/edit" class="dropdown-item">Edit Profile</a>
