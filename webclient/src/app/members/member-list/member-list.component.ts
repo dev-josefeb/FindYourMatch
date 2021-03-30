@@ -13,7 +13,7 @@ export class MemberListComponent implements OnInit {
   members: Member[];
   pagination: Pagination;
   pageNumber = 1;
-  pageSize = 20;
+  pageSize = 18;
 
   constructor(private memberService: MembersService) {}
 
