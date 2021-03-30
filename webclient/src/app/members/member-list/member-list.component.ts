@@ -20,6 +20,7 @@ export class MemberListComponent implements OnInit {
   genderList = [
     { value: 'male', display: 'Males' },
     { value: 'female', display: 'Females' },
+    { value: 'all', display: 'All' },
   ];
 
   constructor(private memberService: MembersService, private accountService: AccountService) {
