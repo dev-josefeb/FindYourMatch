@@ -10,7 +10,7 @@ using System.Text;
 
 namespace API.Services
 {
-    public class TokenService : ITokenService    
+    public class TokenService : ITokenService
     {
         private readonly SymmetricSecurityKey _key;
 
@@ -23,7 +23,8 @@ namespace API.Services
         {
             var claims = new List<Claim>
             {
-                new Claim(JwtRegisteredClaimNames.NameId, user.UserName)
+                new Claim(JwtRegisteredClaimNames.NameId, user.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.UniqueName, user.UserName),
             };
 
             var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);
