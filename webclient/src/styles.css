@@ -7,7 +7,7 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  padding-top: 80px;
+  padding-top: 70px;
   padding-bottom: 100px;
   color: white;
   background: url("/assets/images/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
@@ -197,4 +197,40 @@ a.nav-link {
 
 .nav-tabs .nav-link {
   border: 0 !important;
+}
+
+/* Pagination */
+.page-link {
+  border: none;
+  background-color: #b1b1b146;
+  color: white;
+}
+
+.page-item.active .page-link {
+  border: none;
+  border-radius: 10px;
+  background-color: #00a1646b;
+  color: white;
+}
+
+.page-link:hover {
+  border-radius: 10px !important;
+  background-color: #fca709b4 !important;
+}
+
+.page-item:first-child .page-link {
+  margin-left: 0;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.page-item:last-child .page-link {
+  margin-left: 0;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.page-item.disabled .page-link {
+  color: rgb(182, 182, 182);
+  background-color: #b1b1b146;
 }

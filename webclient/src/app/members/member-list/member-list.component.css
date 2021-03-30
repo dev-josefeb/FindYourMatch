@@ -1,3 +1,14 @@
 .container-fluid {
   color: black;
 }
+
+label,
+input,
+button {
+  color: white;
+}
+
+option {
+  color: rgb(36, 36, 36);
+  background-color: rgba(95, 95, 95, 0);
+}
