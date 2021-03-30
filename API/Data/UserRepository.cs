@@ -35,6 +35,7 @@ namespace API.Data
         {
             var query = _context.Users.AsQueryable();
             query = query.Where(user => user.UserName != userParams.CurrentUsername);
+
             if (userParams.Gender != "all")
                 query = query.Where(user => user.Gender == userParams.Gender);
 
@@ -42,6 +43,12 @@ namespace API.Data
             var maxDob = DateTime.Today.AddYears(-userParams.MinAge);
 
             query = query.Where(user => user.DateOfBirth >= minDob && user.DateOfBirth <= maxDob);
+
+            query = userParams.OrderBy switch
+            {
+                "created" => query.OrderByDescending(user => user.Created),
+                _ => query.OrderByDescending(user => user.LastActive) // _ = default 
+            };
 
             return await PagedList<MemberDto>.CreateAsync(
                 query.ProjectTo<MemberDto>(_mapper.ConfigurationProvider).AsNoTracking(),
