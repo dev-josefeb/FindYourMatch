@@ -1,7 +1,35 @@
 <div class="container-fluid">
+  <div class="text-center mt-3"></div>
+
+  <div *ngIf="members" class="container-main">
+    <form #form="ngForm" class="form-inline mb-3" (ngSubmit)="loadMembers()" autocomplete="off">
+      <label class="btn input mr-4">Your matches: {{ pagination?.totalItems }} found</label>
+
+      <div class="form-group">
+        <label>Age from:</label>
+        <input type="number" class="form-control ml-1 input" style="width: 70px" name="minAge" [(ngModel)]="userParams.minAge" />
+      </div>
+
+      <div class="form-group px-2">
+        <label>Age to:</label>
+        <input type="number" class="form-control ml-1 input" style="width: 70px" name="maxAge" [(ngModel)]="userParams.maxAge" />
+      </div>
+
+      <div class="form-group px-2">
+        <label>Show</label>
+        <select name="gender" class="form-control ml-1 input" [(ngModel)]="userParams.gender" style="width: 130px">
+          <option *ngFor="let gender of genderList" [value]="gender.value">{{ gender.display }}</option>
+        </select>
+      </div>
+
+      <button class="btn btn-one ml-1" type="submit">Apply Filters</button>
+      <button (click)="resetFilters()" class="btn input ml-2" type="submit">Reset Filters</button>
+    </form>
+  </div>
+
   <div class="container-main">
     <div class="row">
-      <div *ngFor="let member of members" class="col-xs-12 col-sm-6 col-lg-2">
+      <div *ngFor="let member of members" class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
         <app-member-card [member]="member"></app-member-card>
       </div>
     </div>
