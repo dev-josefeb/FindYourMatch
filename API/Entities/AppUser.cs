@@ -36,11 +36,9 @@ namespace API.Entities
 
         public ICollection<Photo> Photos { get; set; }
 
-        // Automapper recognises the Get and populates the return value to Age => Get-Age
-        //public int GetAge()
-        //{
-        //    return DateOfBirth.CalculateAge();
-        //}
+        public ICollection<UserLike> LikedByUsers { get; set; }
+
+        public ICollection<UserLike> LikedUsers { get; set; }
 
     }
 }
