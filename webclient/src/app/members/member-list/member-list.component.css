@@ -12,3 +12,20 @@ option {
   color: rgb(36, 36, 36);
   background-color: rgba(95, 95, 95, 0);
 }
+
+div#bottom {
+  position: fixed;
+  bottom: 0;
+
+  /* For the div to be full-width: */
+  width: 100%;
+}
+
+.btn-group button:active {
+  background-color: #00a1646b;
+}
+
+.btn-group {
+  margin-top: 5px;
+  min-width: 240px;
+}
