@@ -8,7 +8,6 @@
   width: 100%;
   height: 100vh;
   padding-top: 70px;
-  padding-bottom: 100px;
   color: white;
   background: url("/assets/images/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
   overflow: auto;
@@ -202,7 +201,7 @@ a.nav-link {
 /* Pagination */
 .page-link {
   border: none;
-  background-color: #b1b1b146;
+  background-color: #b1b1b186;
   color: white;
 }
 
@@ -232,5 +231,5 @@ a.nav-link {
 
 .page-item.disabled .page-link {
   color: rgb(182, 182, 182);
-  background-color: #b1b1b146;
+  background-color: #b1b1b186;
 }
