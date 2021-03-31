@@ -1,7 +1,8 @@
 ﻿using API.DTOs;
 using API.Entities;
+using API.Extensions;
 using API.Interfaces;
-using System;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,19 +18,65 @@ namespace API.Data
             _context = context;
         }
 
-        public Task<UserLike> GetUserLike(int sourceUserId, int likedUserId)
+
+        /// <summary>
+        /// Returns a UserLike 
+        /// </summary>
+        /// <param name="sourceUserId"></param>
+        /// <param name="likedUserId"></param>
+        /// <returns></returns>
+        public async Task<UserLike> GetUserLike(int sourceUserId, int likedUserId)
         {
-            throw new NotImplementedException();
+            return await _context.Likes.FindAsync(sourceUserId, likedUserId);
         }
 
-        public Task<IEnumerable<LikeDto>> GetUserLikes(string predicate, int userId)
+
+        /// <summary>
+        /// Returns a list of users that have been liked by current User [if predicate = liked]
+        /// Returns a list of users that have liked the current User [if predicate = likedBy]
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public async Task<IEnumerable<LikeDto>> GetUserLikes(string predicate, int userId)
         {
-            throw new NotImplementedException();
+            var users = _context.Users.OrderBy(user => user.UserName).AsQueryable();
+            var likes = _context.Likes.AsQueryable();
+
+            if (predicate == "liked")
+            {
+                likes = likes.Where(like => like.SourceUserId == userId);
+                users = likes.Select(like => like.LikedUser);
+            }
+
+            if (predicate == "likedBy")
+            {
+                likes = likes.Where(like => like.LikedUserId == userId);
+                users = likes.Select(like => like.SourceUser);
+            }
+
+            return await users.Select(user => new LikeDto
+            {
+                Username = user.UserName,
+                KnownAs = user.KnownAs,
+                Age = user.DateOfBirth.CalculateAge(),
+                PhotoUrl = user.Photos.FirstOrDefault(photo => photo.IsMain).Url,
+                City = user.City,
+                Id = user.Id
+            }).ToListAsync();
         }
 
-        public Task<AppUser> GetUserWithLikes(int userId)
+        /// <summary>
+        /// Get an AppUser with the Users that have been liked by the Appuser
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+
+        public async Task<AppUser> GetUserWithLikes(int userId)
         {
-            throw new NotImplementedException();
+            return await _context.Users
+                .Include(user => user.LikedUsers)
+                .FirstOrDefaultAsync(user => user.Id == userId);
         }
     }
 }
