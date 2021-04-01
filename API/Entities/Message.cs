@@ -8,7 +8,7 @@ namespace API.Entities
 
         public int SenderId { get; set; }
 
-        public int SenderUsername { get; set; }
+        public string SenderUsername { get; set; }
 
         public AppUser Sender { get; set; }
 
