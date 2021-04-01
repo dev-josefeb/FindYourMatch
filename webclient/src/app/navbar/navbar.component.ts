@@ -10,7 +10,7 @@ import { AccountService } from '../_services/account.service';
 })
 export class NavbarComponent implements OnInit {
   model: any = {};
-  isCollapsed = false;
+  isCollapsed = true;
 
   constructor(public accountService: AccountService, private toastr: ToastrService, private router: Router) {}
 
