@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="container-main">
     <div class="row" *ngIf="member">
-      <div class="col-4">
+      <div class="col-md-4">
         <div class="card">
           <img src="{{ member.photoUrl || './assets/images/user.png' }}" alt="{{ member.knownAs }}" class="card-img top img-thumbnail" />
           <div class="card-body">
@@ -24,14 +24,16 @@
           </div>
 
           <div class="card-footer">
-            <div class="form-group text-center">
-              <button class="btn btn-xl mr-5 btn-two"><i class="fa fa-heart"></i> Like</button>
-              <button class="btn btn-xl btn-one"><i class="fa fa-comment"></i> Message</button>
+            <div class="row justify-content-center">
+              <div class="form-group">
+                <button class="btn btn-xl mr-5 btn-two"><i class="fa fa-heart"></i> Like</button>
+                <button class="btn btn-xl btn-one"><i class="fa fa-comment"></i> Message</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-8">
+      <div class="col-md-8">
         <tabset class="member-tabset">
           <tab heading="About {{ member.knownAs }} ">
             <ng-template tabHeading><i class="fa fa-user"></i></ng-template>
