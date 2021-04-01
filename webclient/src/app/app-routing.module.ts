@@ -13,17 +13,17 @@ import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent, data: { animation: 'isLeft' } },
   {
     path: '',
     runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],
     children: [
-      { path: 'members', component: MemberListComponent },
+      { path: 'members', component: MemberListComponent, data: { animation: 'isLeft' } },
       { path: 'members/:username', component: MemberDetailComponent },
       { path: 'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard] },
       { path: 'lists', component: ListsComponent },
-      { path: 'messages', component: MessagesComponent },
+      { path: 'messages', component: MessagesComponent, data: { animation: 'isRight' } },
     ],
   },
   { path: 'errors', component: TestErrorsComponent },
