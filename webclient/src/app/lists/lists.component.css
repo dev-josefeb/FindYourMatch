@@ -1,3 +1,7 @@
 .red {
   color: tomato;
 }
+
+button:hover .fa {
+  transform: scale(1.5);
+}
