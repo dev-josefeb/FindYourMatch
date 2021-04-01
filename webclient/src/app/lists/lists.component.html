@@ -15,6 +15,10 @@
         <app-member-card [member]="member"></app-member-card>
       </div>
     </div>
-    <div *ngIf="members.length === 0" class="text-center mt-4"><p>There is no data to show here</p></div>
+    <div *ngIf="members && members.length === 0" class="text-center mt-4"><p>There is no data to show here</p></div>
+  </div>
+  <div id="bottom" class="d-flex justify-content-center" *ngIf="pagination && members && members.length != 0">
+    <pagination [boundaryLinks]="true" [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.itemsPerPage" [(ngModel)]="pagination.currentPage" (pageChanged)="pageChanged($event)" previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
+    </pagination>
   </div>
 </div>
