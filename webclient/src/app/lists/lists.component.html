@@ -1,3 +1,20 @@
 <div class="container-fluid">
-  <p>lists works!</p>
+  <!-- <div class="text-center mt-3">
+    <h2>{{ predicate === "liked" ? "Members I like" : "Members who like me" }}</h2>
+  </div> -->
+  <div class="container-main mt-3">
+    <div class="row justify-content-center">
+      <div class="btn-group" name="predicate">
+        <button class="btn btn-outline" btnRadio="liked" [(ngModel)]="predicate" (click)="loadLikes()"><i class="fa fa-heart red"></i> Members I like</button>
+        <button class="btn btn-outline" btnRadio="likedBy" [(ngModel)]="predicate" (click)="loadLikes()">Members who like me <i class="fa fa-heartbeat red"></i></button>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div *ngFor="let member of members" class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <app-member-card [member]="member"></app-member-card>
+      </div>
+    </div>
+    <div *ngIf="members.length === 0" class="text-center mt-4"><p>There is no data to show here</p></div>
+  </div>
 </div>
