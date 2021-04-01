@@ -1,5 +1,8 @@
 .img-thumbnail {
-  margin: 25px;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
   background-color: transparent;
   border: none;
   width: 85%;
@@ -20,4 +23,20 @@
 .card-footer {
   padding: 10px 15px;
   border-top: none;
+}
+
+.card-footer button {
+  margin-top: 10px;
+}
+
+button:hover .fa {
+  transform: scale(2);
+}
+
+button:hover .fa-heart {
+  color: tomato;
+}
+
+button:hover .fa-comment {
+  color: rgb(0, 121, 0);
 }

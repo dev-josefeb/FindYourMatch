@@ -56,8 +56,24 @@
   color: white;
 }
 
-.green-icon {
+.user-icon {
   color: #df0950d2;
+}
+
+button:hover .fa-user {
+  color: #fca709cb;
+}
+
+button:hover .fa-heart {
+  color: tomato;
+}
+
+button:hover .fa-envelope {
+  color: rgb(1, 119, 80);
+}
+
+button:hover .fa {
+  transform: scale(1.5);
 }
 
 p {
