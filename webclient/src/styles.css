@@ -46,8 +46,8 @@
 .btn-outline:active,
 .btn-outline.active {
   color: white;
-  border-color: #fdcc52;
-  background-color: #fdcc52;
+  border-color: #daa725dc;
+  background-color: #daa725dc;
 }
 
 .btn {
@@ -56,6 +56,20 @@
   font-family: "Lato", "Helvetica", "Arial", "sans-serif";
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+
+.btn-filter {
+  background-color: black;
+  border: none;
+}
+
+.btn-filter.active {
+  background-color: #c08f11;
+  border: none;
+}
+
+.btn:focus {
+  box-shadow: none;
 }
 
 button:hover {
