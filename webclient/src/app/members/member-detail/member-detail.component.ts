@@ -25,7 +25,7 @@ export class MemberDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadMember();
-
+    this.route.queryParams.subscribe((params) => (params.tab ? this.selectTab(params.tab) : this.selectTab(0)));
     this.galleryOptions = [{ width: '500px', height: '500px', imagePercent: 100, thumbnailsColumns: 4, imageAnimation: NgxGalleryAnimation.Slide, preview: false }];
   }
 
@@ -48,6 +48,10 @@ export class MemberDetailComponent implements OnInit {
       this.member = member;
       this.galleryImages = this.getImages();
     });
+  }
+
+  selectTab(tabId: number) {
+    this.memberTabs.tabs[tabId].active = true;
   }
 
   onTabActivated(data: TabDirective) {
