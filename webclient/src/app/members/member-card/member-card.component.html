@@ -10,7 +10,7 @@
         <button (click)="addLike(member)" class="btn btn-one success"><i class="fa fa-heart white-icon"></i></button>
       </li>
       <li class="list-inline-item">
-        <button class="btn btn-one success"><i class="fa fa-envelope white-icon"></i></button>
+        <button routerLink="/members/{{ member.username }}" [queryParams]="{ tab: 3 }" class="btn btn-one success"><i class="fa fa-envelope white-icon"></i></button>
       </li>
     </ul>
   </div>
