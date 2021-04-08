@@ -54,7 +54,7 @@
           <tab heading="Messages" (selectTab)="onTabActivated($event)">
             <ng-template tabHeading><i class="fa fa-comment"></i></ng-template>
 
-            <app-member-messages [messages]="messages"></app-member-messages>
+            <app-member-messages [messages]="messages" [username]="member.username"></app-member-messages>
           </tab>
         </tabset>
       </div>
