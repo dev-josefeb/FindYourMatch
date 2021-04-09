@@ -40,6 +40,7 @@ textarea:focus {
 
 .alert {
   background-color: #ffc227af;
+  border-radius: 20px;
   color: white;
   border: none;
 }
@@ -48,6 +49,10 @@ p {
   color: rgba(255, 255, 255, 0.644);
 }
 
-button {
+.btn {
+  background-color: #ffc227c9;
+}
+
+.btn .disabled {
   background-color: transparent;
 }

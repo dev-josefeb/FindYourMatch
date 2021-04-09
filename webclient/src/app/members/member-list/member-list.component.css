@@ -8,6 +8,15 @@ button {
   color: white;
 }
 
+input,
+select {
+  border-radius: 20px;
+}
+
+select.form-control:not([size]):not([multiple]) {
+  height: fit-content !important;
+}
+
 option {
   color: rgb(36, 36, 36);
   background-color: rgba(95, 95, 95, 0);
@@ -27,4 +36,8 @@ div#bottom {
 
 .btn-group {
   min-width: 240px;
+}
+
+.form-control {
+  padding: 0.25rem 1rem;
 }
