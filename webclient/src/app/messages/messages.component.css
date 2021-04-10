@@ -5,3 +5,18 @@
 .img-circle {
   max-height: 50px;
 }
+
+.header {
+  background-color: rgba(59, 59, 59, 0.473);
+  border-radius: 20px;
+}
+
+.table td {
+  border: none;
+  background-color: rgba(99, 99, 99, 0.089);
+}
+
+.table-striped > tbody > tr:nth-child(2n + 1) > td,
+.table-striped > tbody > tr:nth-child(2n + 1) > th {
+  background-color: rgba(99, 99, 99, 0.089);
+}
