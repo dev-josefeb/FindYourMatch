@@ -23,10 +23,11 @@ namespace API
             {
                 var context = services.GetRequiredService<DataContext>();
                 var userManger = services.GetRequiredService<UserManager<AppUser>>();
+                var roleManger = services.GetRequiredService<RoleManager<AppRole>>();
 
                 // Shortcut instead of 'dotnet ef database update', so we just need to restart our app
                 await context.Database.MigrateAsync();
-                await Seed.SeedUsers(userManger);
+                await Seed.SeedUsers(userManger, roleManger);
             }
             catch (Exception ex)
             {
