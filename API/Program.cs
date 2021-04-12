@@ -1,7 +1,9 @@
 using System;
 using System.Threading.Tasks;
 using API.Data;
+using API.Entities;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -20,10 +22,11 @@ namespace API
             try
             {
                 var context = services.GetRequiredService<DataContext>();
+                var userManger = services.GetRequiredService<UserManager<AppUser>>();
 
                 // Shortcut instead of 'dotnet ef database update', so we just need to restart our app
                 await context.Database.MigrateAsync();
-                await Seed.SeedUsers(context);
+                await Seed.SeedUsers(userManger);
             }
             catch (Exception ex)
             {
