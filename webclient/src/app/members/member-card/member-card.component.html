@@ -15,7 +15,10 @@
     </ul>
   </div>
   <div class="card-body p-1">
-    <p class="card-text text-center mb-1"><i class="fa fa-user user-icon mr-1"></i> {{ member.knownAs }}, {{ member.age }}, {{ member.city }}</p>
+    <p class="card-text text-center mb-1">
+      <span [ngClass]="(presence.onlineUsers$ | async).includes(member.username) ? 'is-online' : 'user-icon'"> <i class="fa fa-user mr-1"></i> </span>
+      {{ member.knownAs }}, {{ member.age }}, {{ member.city }}
+    </p>
     <p class="card-text text-muted text-center"><i class="fa fa-location-arrow mr-2"> </i>{{ member.country }}</p>
   </div>
 </div>

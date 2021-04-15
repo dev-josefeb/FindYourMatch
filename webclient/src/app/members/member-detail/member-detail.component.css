@@ -17,7 +17,7 @@
 }
 
 .card-body {
-  padding: 0 25px;
+  padding: 25px 50px;
 }
 
 .card-footer {
@@ -29,9 +29,9 @@
   margin-top: 10px;
 }
 
-.fa {
+/* .fa {
   margin-left: 8px;
-}
+} */
 
 button:hover .fa {
   transform: scale(2);
