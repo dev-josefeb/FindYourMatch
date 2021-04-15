@@ -1,10 +1,12 @@
 ﻿using API.Extensions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Threading.Tasks;
 
 namespace API.SignalR
 {
+    [Authorize]
     public class PresenceHub : Hub
     {
         public override async Task OnConnectedAsync()
