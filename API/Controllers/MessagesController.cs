@@ -52,7 +52,6 @@ namespace API.Controllers
             if (await _messageRepository.SaveAllAsync()) return Ok(_mapper.Map<MessageDto>(message));
 
             return BadRequest("Failed to send message");
-
         }
 
         [HttpGet]
