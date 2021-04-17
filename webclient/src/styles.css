@@ -276,3 +276,8 @@ a.nav-link {
 .fa-clock-o::before {
   margin-right: 3px !important;
 }
+
+.modal-content {
+  border-radius: 20px;
+  opacity: 0.9;
+}
