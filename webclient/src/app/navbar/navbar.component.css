@@ -39,3 +39,9 @@ img {
 .nav-link {
   padding-left: 10px;
 }
+
+.badge {
+  border-radius: 2rem;
+  font-size: 100%;
+  font-weight: 600;
+}
