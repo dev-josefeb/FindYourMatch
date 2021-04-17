@@ -263,6 +263,16 @@ a.nav-link {
   background-color: #0db61bbb !important;
 }
 
+.toast-info {
+  border-radius: 40px !important;
+  background-color: #09db9cd3 !important;
+}
+
+.toast-warning {
+  border-radius: 40px !important;
+  background-color: #dd6520d8 !important;
+}
+
 .fa-clock-o::before {
   margin-right: 3px !important;
 }
