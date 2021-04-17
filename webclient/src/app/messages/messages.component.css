@@ -24,3 +24,8 @@
 .table-striped > tbody > tr:nth-child(2n + 1) > th {
   background-color: rgba(99, 99, 99, 0.089);
 }
+
+.table {
+  margin-left: 30px;
+  margin-right: 30px;
+}

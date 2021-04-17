@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Rubik:wght@300;400&display=swap");
+
+body {
+  font-family: "Rubik", sans-serif;
+}
 .container {
   margin-top: 60px;
 }
