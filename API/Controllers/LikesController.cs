@@ -45,7 +45,6 @@ namespace API.Controllers
             if (await _unitOfWork.Complete()) return Ok();
 
             return BadRequest("Failed to like user");
-
         }
 
         [HttpGet]
