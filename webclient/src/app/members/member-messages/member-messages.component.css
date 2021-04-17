@@ -50,20 +50,20 @@ img {
 }
 ::-webkit-scrollbar-track {
   border-radius: 30px;
-  background-color: #d5f7f7;
+  background-color: #5353539f;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
 }
 
 input {
   border-radius: 20px;
-  background-color: rgba(110, 110, 110, 0.719);
+  background-color: rgba(179, 179, 179, 0.719);
   border-color: none;
   border: none;
   color: white;
 }
 
 ::placeholder {
-  color: rgb(180, 180, 180);
+  color: rgb(99, 99, 99);
 }
 
 input:focus {
@@ -73,4 +73,10 @@ input:focus {
 
 .btn-two {
   color: white;
+}
+
+.text-muted {
+  color: rgb(184, 184, 184) !important;
+  font-family: "Rubik", sans-serif !important;
+  font-size: small;
 }
