@@ -28,9 +28,6 @@ namespace API.Helpers
                 .MapFrom(src => src.Sender.Photos.FirstOrDefault(photo => photo.IsMain).Url))
                 .ForMember(destination => destination.RecipientPhotoUrl, options => options
                 .MapFrom(src => src.Recipient.Photos.FirstOrDefault(photo => photo.IsMain).Url));
-
-            // Add Z at the end of the Date time for the client for UTC time
-            CreateMap<DateTime, DateTime>().ConvertUsing(d => DateTime.SpecifyKind(d, DateTimeKind.Utc));
         }
     }
 }
