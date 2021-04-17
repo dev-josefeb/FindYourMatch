@@ -187,7 +187,7 @@ button:hover {
 }
 
 .member-tabset > .nav-tabs > li.active > a > i {
-  color: #404040;
+  color: #e0363f !important;
 }
 
 .member-tabset > .tab-content {
