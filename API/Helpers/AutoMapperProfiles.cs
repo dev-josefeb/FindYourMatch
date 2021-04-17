@@ -2,7 +2,6 @@
 using API.Entities;
 using API.Extensions;
 using AutoMapper;
-using System;
 using System.Linq;
 
 namespace API.Helpers
