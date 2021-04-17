@@ -42,7 +42,7 @@ namespace API.Controllers
                 return Unauthorized();
 
             if (message.Sender.UserName == username) message.SenderDeleted = true;
-            if (message.Sender.UserName == username) message.RecipientDeleted = true;
+            if (message.Recipient.UserName == username) message.RecipientDeleted = true;
 
             if (message.SenderDeleted && message.RecipientDeleted) _unitOfWork.MessageRepository.DeleteMessage(message);
 

@@ -13,17 +13,17 @@ export class ConfirmDialogComponent implements OnInit {
   btnCancelText: string;
   result: boolean;
 
-  constructor(public bsModelRef: BsModalRef) {}
+  constructor(public bsModalRef: BsModalRef) {}
 
   ngOnInit(): void {}
 
   confirm() {
     this.result = true;
-    this.bsModelRef.hide();
+    this.bsModalRef.hide();
   }
 
   decline() {
     this.result = false;
-    this.bsModelRef.hide();
+    this.bsModalRef.hide();
   }
 }
