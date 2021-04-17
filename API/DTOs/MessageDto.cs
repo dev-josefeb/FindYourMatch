@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 
 namespace API.DTOs
 {
@@ -24,5 +25,11 @@ namespace API.DTOs
 
         public DateTime MessageSent { get; set; }
 
+        // Ignored when sent back to the client as we just want access to it in our repository for mapping purposes
+        [JsonIgnore]
+        public bool SenderDeleted { get; set; }
+
+        [JsonIgnore]
+        public bool RecipientDeleted { get; set; }
     }
 }
