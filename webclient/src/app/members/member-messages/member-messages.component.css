@@ -53,3 +53,24 @@ img {
   background-color: #d5f7f7;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
 }
+
+input {
+  border-radius: 20px;
+  background-color: rgba(110, 110, 110, 0.719);
+  border-color: none;
+  border: none;
+  color: white;
+}
+
+::placeholder {
+  color: white;
+}
+
+input:focus {
+  background-color: rgba(121, 121, 121, 0.856);
+  color: white;
+}
+
+.btn-two {
+  color: white;
+}

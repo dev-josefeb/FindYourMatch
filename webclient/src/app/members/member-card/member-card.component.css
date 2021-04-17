@@ -67,11 +67,11 @@
 
 .is-online {
   animation: fa-blink 1.5s linear infinite;
-  color: rgb(1, 119, 80);
+  color: rgb(24, 253, 177);
 }
 
 .user-icon {
-  color: #df0950d2;
+  color: #ee3d78d2;
 }
 
 button:hover .fa-user {
@@ -83,7 +83,7 @@ button:hover .fa-heart {
 }
 
 button:hover .fa-envelope {
-  color: rgb(1, 119, 80);
+  color: rgb(8, 185, 126);
 }
 
 button:hover .fa {
