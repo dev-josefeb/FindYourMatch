@@ -36,10 +36,6 @@ img {
   display: inline;
 }
 
-.nav-link {
-  padding-left: 10px;
-}
-
 .badge {
   background-color: rgba(255, 201, 54, 0.781);
   color: white;
