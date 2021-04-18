@@ -5,6 +5,7 @@ div.masthead {
   padding-top: 100px;
   padding-bottom: 100px;
   color: white;
+  filter: brightness(90%);
   background: url("/assets/images/bg-pattern.png"), #7b4397;
   background: url("/assets/images/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
   overflow: auto;

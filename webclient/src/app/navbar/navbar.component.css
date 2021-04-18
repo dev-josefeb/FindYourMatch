@@ -49,3 +49,11 @@ img {
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
 }
+
+input {
+  border-radius: 20px;
+}
+
+input:focus {
+  box-shadow: tomato !important;
+}
