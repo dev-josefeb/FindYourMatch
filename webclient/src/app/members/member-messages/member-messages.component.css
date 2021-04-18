@@ -56,18 +56,19 @@ img {
 
 input {
   border-radius: 20px;
-  background-color: rgba(179, 179, 179, 0.719);
+  background-color: rgba(121, 121, 121, 0.856);
   border-color: none;
   border: none;
   color: white;
 }
 
 ::placeholder {
-  color: rgb(99, 99, 99);
+  color: rgb(226, 226, 226);
 }
 
 input:focus {
-  background-color: rgba(121, 121, 121, 0.856);
+  background-color: rgba(163, 163, 163, 0.719);
+
   color: white;
 }
 

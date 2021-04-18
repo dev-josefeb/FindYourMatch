@@ -93,6 +93,11 @@ button:hover {
 }
 
 .input,
+input {
+  border-radius: 20px;
+}
+
+.input,
 .input:focus {
   margin-right: 10px;
   color: rgba(255, 255, 255, 0.918);
@@ -105,7 +110,7 @@ button:hover {
 }
 
 .input::placeholder {
-  color: rgba(255, 255, 255, 0.644);
+  color: rgba(255, 255, 255, 0.795);
 }
 
 .bg-transparent {
