@@ -1,5 +1,6 @@
 ﻿using API.DTOs;
 using API.Entities;
+using API.Extensions;
 using API.Helpers;
 using API.Interfaces;
 using AutoMapper;
@@ -83,27 +84,19 @@ namespace API.Data
             return await PagedList<MessageDto>.CreateAsync(query, messageParams.PageNumber, messageParams.PageSize);
         }
 
-        public async Task<IEnumerable<MessageDto>> GetMessageThread(string currentUsername, string recipientUsername)
+        public async Task<IEnumerable<MessageDto>> GetMessageThread(string currentUsername,
+           string recipientUsername)
         {
             var messages = await _context.Messages
-                .Where(message => message.Recipient.UserName == currentUsername && message.RecipientDeleted == false
-                               && message.Sender.UserName == recipientUsername
-                               || message.Recipient.UserName == recipientUsername
-                               && message.Sender.UserName == currentUsername && message.SenderDeleted == false)
-                .OrderBy(message => message.MessageSent)
+                .Where(m => m.Recipient.UserName == currentUsername && m.RecipientDeleted == false
+                        && m.Sender.UserName == recipientUsername
+                        || m.Recipient.UserName == recipientUsername
+                        && m.Sender.UserName == currentUsername && m.SenderDeleted == false
+                )
+                .MarkUnreadAsRead(currentUsername)
+                .OrderBy(m => m.MessageSent)
                 .ProjectTo<MessageDto>(_mapper.ConfigurationProvider)
                 .ToListAsync();
-
-            var unreadMessages = messages
-                .Where(message => message.DateRead == null
-                               && message.RecipientUsername == currentUsername)
-                .ToList();
-
-            if (unreadMessages.Any())
-            {
-                foreach (var message in unreadMessages)
-                    message.DateRead = DateTime.UtcNow;
-            }
 
             return messages;
         }
