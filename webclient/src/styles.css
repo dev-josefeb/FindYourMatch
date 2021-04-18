@@ -12,8 +12,9 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
-  padding-top: 70px;
+  padding-top: 80px;
   color: white;
+  filter: brightness(90%);
   background: url("/assets/images/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
   overflow: auto;
 }
@@ -94,7 +95,7 @@ button:hover {
 .input,
 .input:focus {
   margin-right: 10px;
-  color: rgba(255, 255, 255, 0.644);
+  color: rgba(255, 255, 255, 0.918);
   border: none;
   background-color: #b1b1b146;
 }
@@ -210,12 +211,12 @@ button:hover {
 
 .nav-link.active {
   color: white !important;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: #00a1646b !important;
 }
 
 a.nav-link {
-  color: rgba(255, 255, 255, 0.644);
+  color: rgba(255, 255, 255, 0.801) !important;
 }
 
 .nav-tabs .nav-link {
@@ -285,4 +286,18 @@ a.nav-link {
 .modal-content {
   border-radius: 20px;
   opacity: 0.9;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 30px;
+  background-color: #353535cb;
+}
+::-webkit-scrollbar-track {
+  border-radius: 30px;
+  background-color: #e2e2e29f;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
 }
