@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" routerLinkActive="active" routerLink="{{ (accountService.currentUser$ | async) ? '/members' : '/' }}">FindYourMatch</a>
+  <a class="navbar-brand" routerLinkActive="active" routerLink="{{ (accountService.currentUser$ | async) ? '/members' : '/' }}"> <img src="./assets/images/logo.png" /> FindYourMatch</a>
   <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarCollapse">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -35,9 +35,9 @@
     </div>
 
     <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" class="d-flex ml-auto" (ngSubmit)="login()" autocomplete="off">
-      <input name="username" [(ngModel)]="model.username" class="input form-control me-2" type="text" placeholder="Username" />
-      <input name="password" [(ngModel)]="model.password" class="input form-control me-2" type="password" placeholder="Password" />
-      <button class="btn btn-one btn-xl success shadow-none" type="submit">Login</button>
+      <input required name="username" [(ngModel)]="model.username" class="input form-control me-2" type="text" placeholder="Username" />
+      <input required name="password" [(ngModel)]="model.password" class="input form-control me-2" type="password" placeholder="Password" />
+      <button [disabled]="!loginForm.valid" class="btn btn-one btn-xl success shadow-none" type="submit">Login</button>
     </form>
   </div>
 </nav>
