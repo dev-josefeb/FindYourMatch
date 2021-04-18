@@ -40,16 +40,12 @@ button {
   color: white;
 }
 
-button:hover .fa {
-  transform: scale(2);
-}
-
 button:hover .fa-heart {
   color: tomato;
 }
 
 button:hover .fa-comment {
-  color: rgb(0, 121, 0);
+  color: rgb(15, 187, 15);
 }
 
 button:hover {
