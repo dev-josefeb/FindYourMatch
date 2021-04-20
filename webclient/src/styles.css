@@ -238,7 +238,7 @@ a.nav-link {
 /* Pagination */
 .page-link {
   border: none;
-  background-color: #b1b1b186;
+  background-color: #636363d0;
   color: white;
 }
 
@@ -268,7 +268,7 @@ a.nav-link {
 
 .page-item.disabled .page-link {
   color: rgb(182, 182, 182);
-  background-color: #b1b1b186;
+  background-color: #636363d0;
 }
 
 .toast-error {
