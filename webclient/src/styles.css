@@ -13,6 +13,7 @@ body {
   width: 100%;
   height: 100vh;
   padding-top: 80px;
+  padding-bottom: 30px;
   color: white;
   filter: brightness(90%);
   background: url("/assets/images/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);

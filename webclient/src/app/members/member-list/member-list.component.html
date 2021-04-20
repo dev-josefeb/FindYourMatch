@@ -40,9 +40,8 @@
       </div>
     </div>
   </div>
-
-  <div id="bottom" class="d-flex justify-content-center" *ngIf="pagination">
-    <pagination [boundaryLinks]="true" [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.itemsPerPage" [(ngModel)]="pagination.currentPage" (pageChanged)="pageChanged($event)" previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
-    </pagination>
-  </div>
+</div>
+<div id="bottom" class="d-flex justify-content-center" *ngIf="pagination">
+  <pagination [boundaryLinks]="true" [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.itemsPerPage" [(ngModel)]="pagination.currentPage" (pageChanged)="pageChanged($event)" previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
+  </pagination>
 </div>
