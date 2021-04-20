@@ -34,10 +34,27 @@ div#bottom {
   background-color: #00a1646b;
 }
 
-.btn-group {
-  min-width: 240px;
+@media screen and (min-width: 768px) {
+  .btn-group {
+    margin-left: 50px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .btn-group {
+    margin-top: 0.5rem;
+  }
 }
 
 .form-control {
   padding: 0.25rem 1rem;
+  margin: 10px;
+}
+
+.form-inline {
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 0.5rem;
 }

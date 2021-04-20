@@ -2,7 +2,7 @@
   <div class="text-center mt-3"></div>
 
   <div *ngIf="members" class="container-main">
-    <form #form="ngForm" class="form-inline mb-3 justify-content-center" (ngSubmit)="loadMembers()" autocomplete="off">
+    <form #form="ngForm" class="form-inline justify-content-center" (ngSubmit)="loadMembers()" autocomplete="off">
       <!-- <label class="btn input mr-4">Your matches: {{ pagination?.totalItems }} found</label> -->
 
       <div class="form-group">
@@ -22,13 +22,17 @@
         </select>
       </div>
 
-      <button class="btn btn-one ml-1" type="submit">Apply Filters</button>
-      <button (click)="resetFilters()" class="btn input ml-2 mr-5" type="submit">Reset Filters</button>
+      <div class="form-group align-content-center text-center">
+        <button class="btn btn-one ml-1" type="submit">Apply Filters</button>
+        <button (click)="resetFilters()" class="btn input ml-2" type="submit">Reset Filters</button>
+      </div>
 
-      <div class="btn-group float-right">
-        <button type="button" btnRadio="lastActive" class="btn btn-filter btn-outline ml-4" name="orderBy" (click)="loadMembers()" [(ngModel)]="userParams.orderBy"><i class="fa fa-sort-amount-asc mr-2"></i>Last Active</button>
+      <div class="form-group">
+        <div class="btn-group">
+          <button type="button" btnRadio="lastActive" class="btn btn-filter btn-outline" name="orderBy" (click)="loadMembers()" [(ngModel)]="userParams.orderBy"><i class="fa fa-sort-amount-asc mr-2"></i>Last Active</button>
 
-        <button type="button" btnRadio="created" class="btn btn-filter btn-outline" name="orderBy" (click)="loadMembers()" [(ngModel)]="userParams.orderBy"><i class="fa fa-sort-amount-asc mr-2"></i>Newest Members</button>
+          <button type="button" btnRadio="created" class="btn btn-filter btn-outline" name="orderBy" (click)="loadMembers()" [(ngModel)]="userParams.orderBy"><i class="fa fa-sort-amount-asc mr-2"></i>Newest Members</button>
+        </div>
       </div>
     </form>
   </div>
