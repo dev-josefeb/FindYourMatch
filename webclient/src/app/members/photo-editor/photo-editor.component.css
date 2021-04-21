@@ -17,3 +17,9 @@ input[type="file"] {
 button {
   margin-right: 10px;
 }
+
+.card {
+  background-color: rgba(196, 196, 196, 0.281);
+  border-radius: 20px;
+  color: rgb(233, 233, 233);
+}
