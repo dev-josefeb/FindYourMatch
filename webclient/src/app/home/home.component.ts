@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { take } from 'rxjs/operators';
+import { User } from '../_models/user';
+import { AccountService } from '../_services/account.service';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +12,14 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   registerMode = false;
 
-  constructor() {}
+  constructor(private accountService: AccountService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    let currentUser: User;
+
+    this.accountService.currentUser$.pipe(take(1)).subscribe((user) => (currentUser = user));
+    if (currentUser) this.router.navigateByUrl('/members');
+  }
 
   registerToggle() {
     this.registerMode = !this.registerMode;
