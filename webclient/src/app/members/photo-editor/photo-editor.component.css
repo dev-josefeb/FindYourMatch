@@ -9,11 +9,17 @@ img.img-thumbnail {
 }
 
 input[type="file"] {
-  color: transparent;
-  max-width: 200px;
+  color: rgb(223, 223, 223);
+  max-width: 230px;
   margin-bottom: 10px;
 }
 
 button {
   margin-right: 10px;
+}
+
+.card {
+  background-color: rgba(196, 196, 196, 0.281);
+  border-radius: 20px;
+  color: rgb(233, 233, 233);
 }

@@ -11,6 +11,7 @@
   color: white;
   border-radius: 20px;
   background-color: #00a1646b;
+  margin-bottom: 20px;
 }
 
 .card-body {
@@ -51,6 +52,7 @@ p {
 
 .btn {
   background-color: #ffc227c9;
+  border: none;
 }
 
 .btn .disabled {

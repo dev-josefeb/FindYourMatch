@@ -59,6 +59,8 @@ export class MemberDetailComponent implements OnInit, OnDestroy {
 
   onTabActivated(data: TabDirective) {
     this.activeTab = data;
+    this.resetUnreadMessageCount();
+
     if (this.activeTab.heading === 'Messages' && this.messages.length === 0) this.messageService.createHubConnection(this.user, this.member.username);
     else this.messageService.stopHubConnection();
   }
@@ -69,6 +71,10 @@ export class MemberDetailComponent implements OnInit, OnDestroy {
 
   addLike(member: Member) {
     this.memberService.addLike(member.username).subscribe(() => this.toastr.success('You have liked ' + member.knownAs));
+  }
+
+  private resetUnreadMessageCount() {
+    this.presence.onNewMessage.next(0);
   }
 
   ngOnDestroy(): void {

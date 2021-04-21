@@ -5,6 +5,7 @@ import { take } from 'rxjs/operators';
 import { User } from '../_models/user';
 import { AccountService } from '../_services/account.service';
 import { MessageService } from '../_services/message.service';
+import { PresenceService } from '../_services/presence.service';
 
 @Component({
   selector: 'app-navbar',
@@ -16,7 +17,7 @@ export class NavbarComponent implements OnInit {
   isCollapsed = true;
   unreadMessages = 0;
 
-  constructor(public accountService: AccountService, private toastr: ToastrService, private router: Router, private messageService: MessageService) {}
+  constructor(public accountService: AccountService, private toastr: ToastrService, private router: Router, private messageService: MessageService, private presenceService: PresenceService) {}
 
   ngOnInit(): void {
     let currentUser: User;
@@ -27,10 +28,21 @@ export class NavbarComponent implements OnInit {
         this.unreadMessages = response.result.length;
       });
     }
+
+    this.presenceService.onNewMessage.subscribe((data) => {
+      if (data !== 0) this.unreadMessages++;
+      else this.unreadMessages = 0;
+    });
   }
 
   login() {
-    this.accountService.login(this.model).subscribe(() => this.router.navigateByUrl('/members'));
+    this.accountService.login(this.model).subscribe(() =>
+      this.router.navigateByUrl('/members').finally(() => {
+        this.messageService.getMessages(1, 10, 'Unread').subscribe((response) => {
+          this.unreadMessages = response.result.length;
+        });
+      })
+    );
   }
 
   logout() {
