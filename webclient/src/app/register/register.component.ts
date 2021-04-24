@@ -1,7 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { AccountService } from '../_services/account.service';
 
 @Component({
@@ -16,7 +15,7 @@ export class RegisterComponent implements OnInit {
   maxDate: Date;
   validationErrors: string[] = [];
 
-  constructor(private accountService: AccountService, private toastr: ToastrService, private fb: FormBuilder, private router: Router) {}
+  constructor(private accountService: AccountService, private fb: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
     this.initializeForm();
@@ -29,12 +28,12 @@ export class RegisterComponent implements OnInit {
   initializeForm() {
     this.registerForm = this.fb.group({
       gender: ['male'],
-      username: ['', Validators.required],
+      username: ['', [Validators.required, this.checkWhitespace()]],
       knownAs: ['', Validators.required],
-      dateOfBirth: ['', Validators.required],
+      dateOfBirth: ['2000-01-01', Validators.required],
       city: ['', Validators.required],
       country: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(8)]],
+      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(16)]],
       confirmPassword: ['', [Validators.required, this.matchValues('password')]],
     });
 
@@ -57,6 +56,12 @@ export class RegisterComponent implements OnInit {
   matchValues(matchTo: string): ValidatorFn {
     return (control: AbstractControl) => {
       return control?.value === control?.parent?.controls[matchTo].value ? null : { isMatching: true };
+    };
+  }
+
+  checkWhitespace(): ValidatorFn {
+    return (control: AbstractControl) => {
+      return !control.value.toString().includes(' ') ? null : { hasWhitespace: true };
     };
   }
 }

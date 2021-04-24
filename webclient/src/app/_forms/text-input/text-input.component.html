@@ -4,4 +4,5 @@
   <div *ngIf="ngControl.control.errors?.minlength" class="input invalid-feedback">{{ label }} must be at least {{ ngControl.control.errors?.minlength["requiredLength"] }} characters</div>
   <div *ngIf="ngControl.control.errors?.maxlength" class="input invalid-feedback">{{ label }} must be at most {{ ngControl.control.errors?.maxlength["requiredLength"] }} characters</div>
   <div *ngIf="ngControl.control.errors?.isMatching" class="input invalid-feedback">Passwords do not match</div>
+  <div *ngIf="ngControl.control.errors?.hasWhitespace" class="input invalid-feedback">No empty spaces are allowed</div>
 </div>
