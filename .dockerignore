@@ -1,0 +1,69 @@
+# flyctl launch added from .gitignore
+**/.gitignore
+**/.prettierrc
+**/bin
+**/obj
+**/.vscode
+**/.vs/FindYourMatch/v16/.suo
+**/.vs/FindYourMatch/DesignTimeBuild/.dtbcache.v2
+
+**/API/appsettings.json
+**/API/findyourmatch.db-shm
+**/API/findyourmatch.db-wal
+**/API/API.csproj.user
+**/API/findyourmatch.db
+**/webclient/src/app/app.component.css
+# API/Data/UserSeedData.json
+._db-backup
+_misc_assets
+
+# flyctl launch added from webclient/.gitignore
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+webclient/**/ssl
+
+# compiled output
+webclient/dist
+webclient/tmp
+webclient/out-tsc
+# Only exists if Bazel was run
+webclient/bazel-out
+
+# dependencies
+webclient/node_modules
+
+# profiling files
+webclient/**/chrome-profiler-events*.json
+webclient/**/speed-measure-plugin*.json
+
+# IDEs and editors
+webclient/.idea
+webclient/**/.project
+webclient/**/.classpath
+webclient/**/.c9
+webclient/**/*.launch
+webclient/**/.settings
+webclient/**/*.sublime-workspace
+
+# IDE - VSCode
+webclient/**/.vscode/*
+!webclient/**/.vscode/settings.json
+!webclient/**/.vscode/tasks.json
+!webclient/**/.vscode/launch.json
+!webclient/**/.vscode/extensions.json
+webclient/**/.history/*
+
+# misc
+webclient/.sass-cache
+webclient/connect.lock
+webclient/coverage
+webclient/libpeerconnection.log
+webclient/**/npm-debug.log
+webclient/**/yarn-error.log
+webclient/**/testem.log
+webclient/typings
+
+# System Files
+webclient/**/.DS_Store
+webclient/**/Thumbs.db
+fly.toml
